@@ -1,0 +1,26 @@
+.header {
+  max-width: 100%;
+  padding: 8.2rem 0;
+}
+
+.header__container {
+  max-width: 110rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading-primary {
+  font-size: 6.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+
+  /* Text Gradient */
+  background: -webkit-linear-gradient(
+    324deg,
+    var(--primary-color) 25%,
+    #d07cd3
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,132 @@
+.section__category {
+  padding: 2.6rem 0;
+}
+
+.categories__container {
+  max-width: 110rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.categories__container {
+  cursor: pointer;
+  border: none;
+  font-size: 2.8rem;
+  font-weight: 500;
+  padding: 1.4rem;
+  max-width: 30rem;
+  border-radius: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.category-all {
+  background: linear-gradient(
+      to right,
+      var(--primary-color),
+      rgba(208, 124, 211, 0.8)
+    ),
+    url("../../assets/category-all.jpg");
+  background-size: cover;
+  background-position: 50% 20%;
+  box-shadow: 0 1rem 2rem var(--primary-color);
+  transition: all 0.4s;
+}
+
+.category-film {
+  position: relative;
+  background: linear-gradient(
+      to right,
+      rgb(102, 166, 13, 0.8),
+      rgb(102, 166, 13, 0.8)
+    ),
+    url("../../assets/category-film.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  box-shadow: 0 1rem 2rem rgb(102, 166, 13, 1);
+
+  transition: all 0.4s;
+}
+.category-film:hover,
+.category-food:hover,
+.category-all:hover,
+.category-general:hover,
+.category-geography:hover,
+.category-science:hover,
+.category-sport:hover {
+  transform: scale(1.05);
+}
+
+.category-film:active,
+.category-food:active,
+.category-all:active,
+.category-general:active,
+.category-geography:active,
+.category-science:active,
+.category-sport:active {
+  transform: scale(0.95);
+}
+
+.category-food {
+  background: linear-gradient(
+      to right,
+      rgb(202, 138, 4, 0.8),
+      rgb(202, 138, 4, 0.8)
+    ),
+    url("../../assets/category-food.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1rem 2rem rgb(202, 138, 4, 1);
+  transition: all 0.4s;
+}
+
+.category-geography {
+  background: linear-gradient(
+      to right,
+      rgb(87, 83, 78, 0.8),
+      rgb(87, 83, 78, 0.8)
+    ),
+    url("../../assets/category-geography.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1rem 2rem rgb(87, 83, 78);
+  transition: all 0.4s;
+}
+.category-general {
+  background: linear-gradient(
+      to right,
+      rgb(13, 148, 136, 0.8),
+      rgb(13, 148, 136, 0.8)
+    ),
+    url("../../assets/category-general.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1rem 2rem rgb(13, 148, 136, 1);
+  transition: all 0.4s;
+}
+.category-science {
+  background: linear-gradient(
+      to right,
+      rgb(2, 132, 199, 0.8),
+      rgb(2, 132, 199, 0.8)
+    ),
+    url("../../assets/category-science.jpg");
+  background-size: cover;
+  background-position: center 28%;
+  box-shadow: 0 1rem 2rem rgb(2, 132, 199, 1);
+  transition: all 0.4s;
+}
+.category-sport {
+  background: linear-gradient(
+      to right,
+      rgb(225, 29, 72, 0.8),
+      rgb(225, 29, 72, 0.8)
+    ),
+    url("../../assets/category-sport.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1rem 2rem rgb(225, 29, 72, 1);
+  transition: all 0.4s;
+  backface-visibility: hidden;
+}

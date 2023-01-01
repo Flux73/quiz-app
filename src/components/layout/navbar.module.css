@@ -1,0 +1,35 @@
+.nav {
+  max-width: 100%;
+  padding: 3.2rem 0;
+}
+
+.nav__container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo {
+  max-width: 18.5rem;
+  margin-right: auto;
+}
+
+.nav__container-meta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.github__logo,
+.theme__logo {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  transition: all 0.4s;
+}
+
+.github__logo:hover,
+.theme__logo:hover {
+  color: var(--primary-color);
+  opacity: 0.8;
+}

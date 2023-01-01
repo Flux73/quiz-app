@@ -1,13 +1,71 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-color: rgb(79, 70, 229);
+
+  --font-color__light: #555;
+  --background-color__light: #eff0fe;
+
+  --background-color__dark: #141430;
+  --font-color__dark: #e0e7ff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: Cabin;
+  src: url("./fonts/Cabin-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Cabin;
+  src: url("./fonts/Cabin-SemiBold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Cabin;
+  src: url("./fonts/Cabin-Bold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Cabin;
+  src: url("./fonts/Cabin-Regular.otf");
+  font-weight: 400;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Cabin, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  line-height: 1;
+  font-weight: 400;
+  color: var(--font-color__dark);
+  background-color: var(--background-color__dark);
+}
+
+h1 {
+  font-size: 6.4rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+a {
+  color: #555;
+  font-size: 2rem;
+  text-decoration: none;
 }

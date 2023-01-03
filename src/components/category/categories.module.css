@@ -27,7 +27,7 @@
       var(--primary-color),
       rgba(208, 124, 211, 0.8)
     ),
-    url("../../assets/category-all.jpg");
+    url("../../assets/category-all-comp.jpg");
   background-size: cover;
   background-position: 50% 20%;
   box-shadow: 0 1rem 2rem var(--primary-color);
@@ -41,31 +41,12 @@
       rgb(102, 166, 13, 0.8),
       rgb(102, 166, 13, 0.8)
     ),
-    url("../../assets/category-film.jpg");
+    url("../../assets/category-film-comp.jpg");
   background-size: cover;
   background-position: center 40%;
   box-shadow: 0 1rem 2rem rgb(102, 166, 13, 1);
 
   transition: all 0.4s;
-}
-.category-film:hover,
-.category-food:hover,
-.category-all:hover,
-.category-general:hover,
-.category-geography:hover,
-.category-science:hover,
-.category-sport:hover {
-  transform: scale(1.05);
-}
-
-.category-film:active,
-.category-food:active,
-.category-all:active,
-.category-general:active,
-.category-geography:active,
-.category-science:active,
-.category-sport:active {
-  transform: scale(0.95);
 }
 
 .category-food {
@@ -74,7 +55,7 @@
       rgb(202, 138, 4, 0.8),
       rgb(202, 138, 4, 0.8)
     ),
-    url("../../assets/category-food.jpg");
+    url("../../assets/category-food-comp.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 1rem 2rem rgb(202, 138, 4, 1);
@@ -87,7 +68,7 @@
       rgb(87, 83, 78, 0.8),
       rgb(87, 83, 78, 0.8)
     ),
-    url("../../assets/category-geography.jpg");
+    url("../../assets/category-geography-comp.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 1rem 2rem rgb(87, 83, 78);
@@ -99,7 +80,7 @@
       rgb(13, 148, 136, 0.8),
       rgb(13, 148, 136, 0.8)
     ),
-    url("../../assets/category-general.jpg");
+    url("../../assets/category-general-comp.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 1rem 2rem rgb(13, 148, 136, 1);
@@ -111,7 +92,7 @@
       rgb(2, 132, 199, 0.8),
       rgb(2, 132, 199, 0.8)
     ),
-    url("../../assets/category-science.jpg");
+    url("../../assets/category-science-comp.jpg");
   background-size: cover;
   background-position: center 28%;
   box-shadow: 0 1rem 2rem rgb(2, 132, 199, 1);
@@ -123,10 +104,9 @@
       rgb(225, 29, 72, 0.8),
       rgb(225, 29, 72, 0.8)
     ),
-    url("../../assets/category-sport.jpg");
+    url("../../assets/category-sport-comp.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 1rem 2rem rgb(225, 29, 72, 1);
   transition: all 0.4s;
-  backface-visibility: hidden;
 }

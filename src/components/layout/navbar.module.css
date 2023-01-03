@@ -21,8 +21,15 @@
   gap: 2rem;
 }
 
+.nav__container-meta button {
+  background-color: transparent;
+  border: none;
+  transition: var(--transition-delay);
+}
+
 .github__logo,
 .theme__logo {
+  cursor: pointer;
   font-size: 2.8rem;
   color: var(--primary-color);
   transition: all 0.4s;

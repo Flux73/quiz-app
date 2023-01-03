@@ -6,6 +6,8 @@
 
   --background-color__dark: #141430;
   --font-color__dark: #e0e7ff;
+
+  --transition-delay: 1s;
 }
 
 * {
@@ -52,6 +54,12 @@ body {
 
   line-height: 1;
   font-weight: 400;
+  color: var(--font-color__light);
+  background-color: var(--background-color__light);
+  transition: var(--transition-delay);
+}
+
+body.dark {
   color: var(--font-color__dark);
   background-color: var(--background-color__dark);
 }

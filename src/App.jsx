@@ -5,7 +5,10 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
-  console.log(window.matchMedia("(prefers-color-scheme: light)").matches);
+  console.log(
+    window.matchMedia("(prefers-color-scheme: light)").matches,
+    "THEME"
+  );
   return (
     <div className="App">
       <Routes>

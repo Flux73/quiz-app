@@ -56,7 +56,7 @@ body {
   font-weight: 400;
   color: var(--font-color__light);
   background-color: var(--background-color__light);
-  transition: var(--transition-delay);
+  transition: all var(--transition-delay);
 }
 
 body.dark {

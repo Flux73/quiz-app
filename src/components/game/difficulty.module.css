@@ -1,0 +1,66 @@
+.difficulty__heading {
+  margin-bottom: 2rem;
+}
+
+.difficulty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2rem; */
+  font-size: 2rem;
+  background-color: var(--background-color__dark);
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  padding: 1.2rem 2.4rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.difficulty span {
+  margin-left: auto;
+  margin-right: -2rem;
+}
+.difficulty svg {
+  margin-left: auto;
+}
+
+body[class="dark"] .difficulty {
+  background-color: var(--background-color__light);
+}
+
+body[class="dark"] .difficulty:hover {
+  background-color: var(--primary-color);
+}
+
+.difficulty:hover {
+  background-color: var(--primary-color);
+  color: var(--font-color__dark);
+}
+
+.difficulty__list {
+  display: flex;
+  color: var(--primary-color);
+  flex-direction: column;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 1rem 2rem 4.8rem rgb(0, 0, 0, 0.15);
+  padding: 1rem 0;
+  background-color: var(--background-color__dark);
+}
+
+body[class="dark"] .difficulty__list {
+  background-color: var(--background-color__light);
+}
+
+.difficulty__list li {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.difficulty__list li:hover {
+  background-color: var(--primary-color);
+  color: var(--font-color__dark);
+}

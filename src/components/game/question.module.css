@@ -1,0 +1,21 @@
+.question {
+  height: 25rem;
+  box-shadow: 0 0 0 0.5rem var(--background-color__dark) inset;
+  border-radius: 1rem;
+  padding: 6rem 8rem;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition-delay);
+}
+
+.question p {
+  line-height: 1.6;
+  font-size: 2.4rem;
+}
+
+body[class="dark"] .question {
+  box-shadow: 0 0 0 0.5rem var(--background-color__light) inset;
+}

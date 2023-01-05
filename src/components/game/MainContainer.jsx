@@ -1,6 +1,10 @@
 import React from "react";
 import Section from "../layout/Section";
-import { Link, useLocation } from "react-router-dom";
+import QuestionContainer from "./QuestionContainer";
+import PreviousPage from "./PreviousPage";
+import Category from "./Category";
+import Difficulty from "./Difficulty";
+import { useLocation } from "react-router-dom";
 
 import styles from "./mainContainer.module.css";
 
@@ -10,19 +14,12 @@ const MainContainer = () => {
 
   return (
     <>
-      <div className={styles.link__container}>
-        <Link className={styles.back__link} to="/home">
-          &#171; Back To Previous Page
-        </Link>
-      </div>
+      <PreviousPage />
       <Section>
         <div className={styles["section__game-container"]}>
-          <div className={styles.category__type}>
-            <p>{location.state.categoryName}</p>
-          </div>
-          <div className={styles.question}>
-            <p>First Question?</p>
-          </div>
+          <Category>{location.state.categoryName}</Category>
+          <QuestionContainer />
+          <Difficulty />
         </div>
       </Section>
     </>

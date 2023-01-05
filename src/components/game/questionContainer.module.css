@@ -1,0 +1,10 @@
+.question__container {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+}
+
+.choises__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

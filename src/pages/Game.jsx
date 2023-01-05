@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/layout/Navbar";
-import { useLocation } from "react-router-dom";
+import MainContainer from "../components/game/MainContainer";
+import { Link, useLocation } from "react-router-dom";
 
 const Game = () => {
   const location = useLocation();
@@ -8,7 +9,9 @@ const Game = () => {
   return (
     <>
       <Navbar />
-      <p>{location.state.categoryName}</p>
+      <main>
+        <MainContainer />
+      </main>
     </>
   );
 };

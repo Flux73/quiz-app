@@ -9,6 +9,7 @@ import categorySportImg from "../../assets/category-sport.jpg";
 import categoryGeographyImg from "../../assets/category-geography.jpg";
 
 import styles from "./categories.module.css";
+import Section from "../layout/Section";
 
 const categories = [
   { category: "All", img: categoryAllImg, style: "all" },
@@ -22,7 +23,7 @@ const categories = [
 
 const Categories = () => {
   return (
-    <section className={styles.section__category}>
+    <Section>
       <div className={styles.categories__container}>
         {categories.map((category, i) => (
           <Category
@@ -33,7 +34,7 @@ const Categories = () => {
           />
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

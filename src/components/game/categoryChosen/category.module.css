@@ -1,0 +1,19 @@
+.category__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.category__type {
+  padding: 1.2rem 0;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 1rem 2rem 4.8rem rgb(0, 0, 0, 0.15);
+  background-color: var(--background-color__dark);
+  color: var(--primary-color);
+  margin-bottom: auto;
+  transition: var(--transition-delay);
+}
+
+body[class="dark"] .category__type {
+  background-color: var(--background-color__light);
+}

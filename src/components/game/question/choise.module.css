@@ -1,0 +1,12 @@
+.choise__container {
+  text-align: center;
+  cursor: pointer;
+}
+
+.choise__container:hover {
+  box-shadow: 0 0 0 1px inset var(--background-color__dark);
+}
+
+body[class="dark"] .choise__container:hover {
+  box-shadow: 0 0 0 1px inset var(--background-color__light);
+}

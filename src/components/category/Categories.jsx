@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { initialStateFn } from "../../store/app-data-slice";
 import Category from "./Category";
 import categoryAllImg from "../../assets/category-all.jpg";
 import categoryFilmImg from "../../assets/category-film.jpg";
@@ -22,6 +25,15 @@ const categories = [
 ];
 
 const Categories = () => {
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      dispatch(initialStateFn());
+    }
+  }, [location.pathname, dispatch]);
+
   return (
     <Section>
       <div className={styles.categories__container}>

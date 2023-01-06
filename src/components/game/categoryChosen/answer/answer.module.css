@@ -1,0 +1,19 @@
+.answer {
+  border: 2px solid var(--background-color__dark);
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer svg {
+  font-size: 1.6rem;
+  color: var(--font-color__dark);
+}
+
+body[class="dark"] .answer {
+  border: 2px solid var(--background-color__light);
+}

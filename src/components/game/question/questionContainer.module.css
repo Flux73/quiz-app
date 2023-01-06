@@ -8,3 +8,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.wrong {
+  box-shadow: 0 0 0 1px inset #e11d48;
+  color: #e11d48;
+}
+
+.correct {
+  box-shadow: 0 0 0 1px inset #0d9488;
+  color: #0d9488;
+}

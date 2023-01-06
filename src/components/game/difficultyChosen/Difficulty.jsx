@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchDataAPI } from "../../../store/async-thunks";
+import { setDifficulty } from "../../../store/app-data-slice";
 
 import styles from "./difficulty.module.css";
 
 const Difficulty = () => {
   const [listHidden, setListHidden] = useState(true);
-  const [difficulty, setDifficulty] = useState("easy");
+  const { difficulty } = useSelector((state) => state.appSlice);
+  const dispatch = useDispatch();
 
   const showList = () => {
     setListHidden((prev) => !prev);
@@ -15,7 +19,8 @@ const Difficulty = () => {
     const targetElement = e.target.closest("li");
     if (!targetElement) return;
 
-    setDifficulty(targetElement.dataset.difficulty);
+    dispatch(setDifficulty({ difficulty: targetElement.dataset.difficulty }));
+    dispatch(fetchDataAPI());
     showList();
   };
 
@@ -23,7 +28,7 @@ const Difficulty = () => {
     <div className={styles.difficulty__container}>
       <p className={styles.difficulty__heading}>Difficulty :</p>
       <div onClick={showList} className={styles.difficulty}>
-        <span>Easy</span>
+        <span>{`${difficulty[0].toUpperCase()}${difficulty.slice(1)}`}</span>
         <IoChevronDownOutline />
       </div>
       {!listHidden && (

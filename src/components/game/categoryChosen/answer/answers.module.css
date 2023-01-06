@@ -1,0 +1,13 @@
+.answers__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 1.2rem;
+}
+
+.correct {
+  background-color: #0d9488;
+}
+
+.wrong {
+  background-color: #e11d48;
+}

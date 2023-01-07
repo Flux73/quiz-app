@@ -45,13 +45,11 @@ const appSlice = createSlice({
           "sport_and_leisure",
         ].join(",");
         state.limit = 7;
+        state.answers = Array(state.limit).fill(null);
         return;
       }
       state.category = action.payload.category;
-    },
-
-    setLimit: (state, action) => {
-      state.limit = action.payload.limit;
+      state.answers = Array(state.limit).fill(null);
     },
 
     storeQuestions: (state, action) => {
@@ -67,7 +65,6 @@ const appSlice = createSlice({
         });
       });
       state.data = dummyArr;
-      state.answers = dummyArr.map(() => null);
     },
 
     increaseIterationQuestion: (state, action) => {
@@ -88,7 +85,6 @@ export const {
   initialStateFn,
   setDifficulty,
   setCategory,
-  setLimit,
   storeQuestions,
   increaseIterationQuestion,
   setChosenAnswer,

@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import Section from "../layout/Section";
 import QuestionContainer from "./question/QuestionContainer";
+import Skeleton from "../layout/Skeleton";
 import PreviousPage from "./PreviousPage";
 import Category from "./categoryChosen/Category";
 import Difficulty from "./difficultyChosen/Difficulty";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { setCategory } from "../../store/app-data-slice";
-import { setLimit } from "../../store/app-data-slice";
 import { fetchDataAPI } from "../../store/async-thunks";
 
 import styles from "./mainContainer.module.css";
@@ -25,6 +25,7 @@ const MainContainer = () => {
   useEffect(() => {
     if (category) {
       dispatch(fetchDataAPI());
+      // dispatch();
     }
   }, [category, dispatch]);
 
@@ -34,7 +35,7 @@ const MainContainer = () => {
       <Section>
         <div className={styles["section__game-container"]}>
           <Category>{location.state.categoryName}</Category>
-          {data.length > 0 && <QuestionContainer />}
+          <QuestionContainer />
           <Difficulty />
         </div>
       </Section>

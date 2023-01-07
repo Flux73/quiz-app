@@ -9,6 +9,7 @@ import {
 } from "../../../store/app-data-slice";
 
 import styles from "./questionContainer.module.css";
+import Skeleton from "../../layout/Skeleton";
 
 const QuestionContainer = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,6 @@ const QuestionContainer = () => {
   const { limit } = useSelector((state) => state.appSlice);
   const [resultAnswer, setResultAnswer] = useState(null);
 
-  console.log(data);
   const selectedAnswer = (e) => {
     if (chosenAnswer) return;
     const el = e.target.closest("div");
@@ -45,30 +45,54 @@ const QuestionContainer = () => {
 
   return (
     <div className={styles.question__container}>
-      <Question question={data[currentQuestionIteration].question} />
+      {data.length > 0 && (
+        <Question question={data[currentQuestionIteration].question} />
+      )}
+      {data.length === 0 && (
+        <Skeleton>
+          <Question />
+        </Skeleton>
+      )}
       <div className={styles.choises__container}>
-        {data[currentQuestionIteration].answers.map((answer, i) => (
-          <Choise
-            onClick={selectedAnswer}
-            key={i}
-            styleAnswer={
-              chosenAnswer === answer.toLowerCase()
-                ? `${resultAnswer && styles.correct} ${
-                    !resultAnswer && styles.wrong
-                  }`
-                : ""
-            }
-            correctOne={
-              chosenAnswer &&
-              (data[currentQuestionIteration].correctAnswer.toLowerCase() ===
-              answer.toLowerCase()
-                ? styles.correct
-                : "")
-            }
-            answer={answer}
-            dataSet={answer.toLowerCase()}
-          />
-        ))}
+        {data.length > 0 &&
+          data[currentQuestionIteration].answers.map((answer, i) => (
+            <Choise
+              onClick={selectedAnswer}
+              key={i}
+              styleAnswer={
+                chosenAnswer === answer.toLowerCase()
+                  ? `${resultAnswer && styles.correct} ${
+                      !resultAnswer && styles.wrong
+                    }`
+                  : ""
+              }
+              correctOne={
+                chosenAnswer &&
+                (data[currentQuestionIteration].correctAnswer.toLowerCase() ===
+                answer.toLowerCase()
+                  ? styles.correct
+                  : "")
+              }
+              answer={answer}
+              dataSet={answer.toLowerCase()}
+            />
+          ))}
+        {data.length === 0 && (
+          <>
+            <Skeleton>
+              <Choise />
+            </Skeleton>
+            <Skeleton>
+              <Choise />
+            </Skeleton>
+            <Skeleton>
+              <Choise />
+            </Skeleton>
+            <Skeleton>
+              <Choise />
+            </Skeleton>
+          </>
+        )}
       </div>
     </div>
   );

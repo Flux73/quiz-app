@@ -11,7 +11,6 @@ export const fetchDataAPI = () => {
           `https://the-trivia-api.com/api/questions?categories=${appSlice.category}&limit=${appSlice.limit}&difficulty=${appSlice.difficulty}`
         );
 
-        console.log(response);
         dispatch(storeQuestions({ data: response.data }));
       } catch (err) {
         console.log(err);

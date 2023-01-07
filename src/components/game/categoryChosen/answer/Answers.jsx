@@ -7,19 +7,23 @@ import { IoCloseOutline } from "react-icons/io5";
 import styles from "./answers.module.css";
 
 const Answers = () => {
-  const { limit } = useSelector((state) => state.appSlice);
-
+  const { answers } = useSelector((state) => state.appSlice);
+  console.log("ANSWER", answers);
   return (
     <div className={styles.answers__container}>
-      {[...Array(limit)].map((el, i) => (
-        <Answer key={i}></Answer>
+      {answers.map((el, i) => (
+        <Answer
+          className={
+            (el === null && "") ||
+            (el === true && styles.correct) ||
+            (el === false && styles.wrong)
+          }
+          key={i}
+        >
+          {el && <IoCheckmarkOutline />}
+          {el === false && <IoCloseOutline />}
+        </Answer>
       ))}
-      {/* <Answer className={styles.correct}>
-        <IoCheckmarkOutline />
-      </Answer>
-      <Answer className={styles.wrong}>
-        <IoCloseOutline />
-      </Answer> */}
     </div>
   );
 };

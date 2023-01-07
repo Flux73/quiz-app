@@ -1,53 +1,66 @@
 import React, { useState } from "react";
 import Question from "./Question";
 import Choise from "./Choise";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addResultAnswer,
+  increaseIterationQuestion,
+  setChosenAnswer,
+} from "../../../store/app-data-slice";
 
 import styles from "./questionContainer.module.css";
-import { useSelector } from "react-redux";
 
 const QuestionContainer = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [wrongCorrect, setWrongCorrect] = useState("");
-  const [chosenAnswer, setChosenAnswer] = useState(null);
+  const dispatch = useDispatch();
+  const { chosenAnswer } = useSelector((state) => state.appSlice);
+  const { currentQuestionIteration } = useSelector((state) => state.appSlice);
   const { data } = useSelector((state) => state.appSlice);
+  const { limit } = useSelector((state) => state.appSlice);
+  const [resultAnswer, setResultAnswer] = useState(null);
 
   console.log(data);
   const selectedAnswer = (e) => {
+    if (chosenAnswer) return;
     const el = e.target.closest("div");
-    setChosenAnswer(el.dataset.answer);
+    dispatch(setChosenAnswer({ answer: el.dataset.answer }));
     if (
-      el.dataset.answer === data[currentQuestion].correctAnswer.toLowerCase()
+      el.dataset.answer ===
+      data[currentQuestionIteration].correctAnswer.toLowerCase()
     ) {
-      setWrongCorrect("correct");
+      dispatch(addResultAnswer({ result: true }));
+      setResultAnswer(true);
     } else {
-      setWrongCorrect("wrong");
+      dispatch(addResultAnswer({ result: false }));
+      setResultAnswer(false);
     }
 
     setTimeout(() => {
-      setChosenAnswer(null);
-      setWrongCorrect("");
-      setCurrentQuestion((prev) => (prev += 1));
+      if (currentQuestionIteration < limit - 1) {
+        dispatch(setChosenAnswer({ answer: null }));
+        setResultAnswer(null);
+        dispatch(increaseIterationQuestion());
+      }
     }, 2000);
   };
 
   return (
     <div className={styles.question__container}>
-      <Question question={data[currentQuestion].question} />
+      <Question question={data[currentQuestionIteration].question} />
       <div className={styles.choises__container}>
-        {data[currentQuestion].answers.map((answer, i) => (
+        {data[currentQuestionIteration].answers.map((answer, i) => (
           <Choise
             onClick={selectedAnswer}
             key={i}
             styleAnswer={
               chosenAnswer === answer.toLowerCase()
-                ? `${wrongCorrect === "correct" && styles.correct} ${
-                    wrongCorrect === "wrong" && styles.wrong
+                ? `${resultAnswer && styles.correct} ${
+                    !resultAnswer && styles.wrong
                   }`
                 : ""
             }
             correctOne={
               chosenAnswer &&
-              (data[currentQuestion].correctAnswer.toLowerCase() ===
+              (data[currentQuestionIteration].correctAnswer.toLowerCase() ===
               answer.toLowerCase()
                 ? styles.correct
                 : "")

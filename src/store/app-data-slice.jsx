@@ -7,6 +7,9 @@ const initialState = {
   difficulty: "easy",
   category: null,
   data: [],
+  chosenAnswer: null,
+  currentQuestionIteration: 0,
+  answers: [],
 };
 
 const appSlice = createSlice({
@@ -18,13 +21,32 @@ const appSlice = createSlice({
       state.limit = 5;
       state.difficulty = "easy";
       state.data = [];
+      state.answers = [];
+      state.chosenAnswer = null;
+      state.currentQuestionIteration = 0;
     },
 
     setDifficulty: (state, action) => {
       state.difficulty = action.payload.difficulty;
+      // Default
+      state.chosenAnswer = null;
+      state.data = [];
+      state.currentQuestionIteration = 0;
     },
 
     setCategory: (state, action) => {
+      if (action.payload.category === "all") {
+        state.category = [
+          "food_and_drink",
+          "general_knowledge",
+          "film_and_tv",
+          "geography",
+          "science",
+          "sport_and_leisure",
+        ].join(",");
+        state.limit = 7;
+        return;
+      }
       state.category = action.payload.category;
     },
 
@@ -45,6 +67,19 @@ const appSlice = createSlice({
         });
       });
       state.data = dummyArr;
+      state.answers = dummyArr.map(() => null);
+    },
+
+    increaseIterationQuestion: (state, action) => {
+      state.currentQuestionIteration = state.currentQuestionIteration + 1;
+    },
+
+    setChosenAnswer: (state, action) => {
+      state.chosenAnswer = action.payload.answer;
+    },
+
+    addResultAnswer: (state, action) => {
+      state.answers[state.currentQuestionIteration] = action.payload.result;
     },
   },
 });
@@ -55,6 +90,9 @@ export const {
   setCategory,
   setLimit,
   storeQuestions,
+  increaseIterationQuestion,
+  setChosenAnswer,
+  addResultAnswer,
 } = appSlice.actions;
 
 export default appSlice.reducer;

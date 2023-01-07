@@ -17,15 +17,8 @@ const MainContainer = () => {
   const { data } = useSelector((state) => state.appSlice);
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(location);
 
   useEffect(() => {
-    if (location.state.apiName === "all") {
-      dispatch(setCategory({ category: [] }));
-      dispatch(setLimit({ limit: 7 }));
-      return;
-    }
-
     dispatch(setCategory({ category: location.state.apiName }));
   }, [dispatch, location.state.apiName]);
 

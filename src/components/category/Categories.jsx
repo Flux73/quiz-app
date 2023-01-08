@@ -25,7 +25,6 @@ const Categories = () => {
           <Category
             className={styles[`category-${category.style}`]}
             categoryName={category.category}
-            categoryImg={category.img}
             key={i}
           />
         ))}

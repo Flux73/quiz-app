@@ -18,8 +18,3 @@
 .category:active {
   transform: scale(0.95);
 }
-
-/* .category:focus {
-  outline: none;
-  border: none;
-} */

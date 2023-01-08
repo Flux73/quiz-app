@@ -40,3 +40,9 @@
   color: var(--primary-color);
   opacity: 0.8;
 }
+
+@media screen and (max-width: 82em) {
+  .nav__container {
+    max-width: 90%;
+  }
+}

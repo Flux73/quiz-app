@@ -5,3 +5,26 @@
   grid-template-columns: 0.5fr 2fr 0.5fr;
   column-gap: 4rem;
 }
+
+@media screen and (max-width: 62em) {
+  .section__game-container {
+    max-width: 70%;
+    grid-template-columns: 1fr 2fr;
+    row-gap: 8rem;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .section__game-container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 37em) {
+  .section__game-container {
+    max-width: 100%;
+    padding: 0 4rem;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+}

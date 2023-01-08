@@ -19,3 +19,10 @@
 body[class="dark"] .question {
   box-shadow: 0 0 0 0.5rem var(--background-color__light) inset;
 }
+
+@media screen and (max-width: 25em) {
+  .question {
+    height: auto;
+    padding: 1rem 2rem;
+  }
+}

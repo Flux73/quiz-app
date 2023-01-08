@@ -24,3 +24,19 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@media screen and (max-width: 82em) {
+  .header__container {
+    padding: 0 8rem;
+  }
+}
+
+@media screen and (max-width: 37em) {
+  .header__container {
+    padding: 0;
+  }
+  .heading-primary {
+    font-size: 4.5rem;
+    line-height: 1.4;
+  }
+}

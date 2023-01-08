@@ -11,3 +11,9 @@
 .wrong {
   background-color: #e11d48;
 }
+
+@media screen and (max-width: 37em) {
+  .answers__container {
+    column-gap: 1.2rem;
+  }
+}

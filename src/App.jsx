@@ -2,8 +2,6 @@ import Home from "./pages/Home";
 import Game from "./pages/Game";
 import { Routes, Route } from "react-router-dom";
 
-import "./App.css";
-
 const App = () => {
   return (
     <div className="App">

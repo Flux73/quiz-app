@@ -18,3 +18,22 @@
   color: var(--primary-color);
   opacity: 0.7;
 }
+
+@media screen and (max-width: 62em) {
+  .link__container {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .link__container {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 37em) {
+  .section__game-container {
+    max-width: 100%;
+    padding: 0 4rem;
+  }
+}

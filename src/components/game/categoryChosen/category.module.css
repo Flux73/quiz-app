@@ -17,3 +17,28 @@
 body[class="dark"] .category__type {
   background-color: var(--background-color__light);
 }
+
+@media screen and (max-width: 37em) {
+  .category__container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .category__type {
+    width: 22rem;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 25em) {
+  .category__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .category__type {
+    width: 22rem;
+    margin-right: 0;
+  }
+}

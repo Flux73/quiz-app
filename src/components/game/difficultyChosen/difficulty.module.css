@@ -64,3 +64,18 @@ body[class="dark"] .difficulty__list {
   background-color: var(--primary-color);
   color: var(--font-color__dark);
 }
+
+@media screen and (max-width: 62em) {
+  .difficulty__container {
+    grid-column: 1/3;
+    justify-self: center;
+    width: 22rem;
+  }
+}
+
+@media screen and (max-width: 37em) {
+  .section__game-container {
+    max-width: 100%;
+    padding: 0 4rem;
+  }
+}

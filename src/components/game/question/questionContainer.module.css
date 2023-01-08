@@ -19,3 +19,10 @@
   box-shadow: 0 0 0 1px inset #0d9488;
   color: #0d9488;
 }
+
+@media screen and (max-width: 37em) {
+  .question__container {
+    grid-row: 2/3;
+    gap: 7.5rem;
+  }
+}

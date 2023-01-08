@@ -8,6 +8,8 @@
   --font-color__dark: #e0e7ff;
 
   --transition-delay: 1s;
+
+  --bp-large: 82em;
 }
 
 * {
@@ -79,3 +81,23 @@ a {
   font-size: 2rem;
   text-decoration: none;
 }
+
+@media screen and (max-width: 82em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 62em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+/* Breakpoint: 82 - 62 - 50 - 37 - 25 */

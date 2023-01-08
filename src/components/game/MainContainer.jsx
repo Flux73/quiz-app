@@ -6,7 +6,7 @@ import PreviousPage from "./PreviousPage";
 import Category from "./categoryChosen/Category";
 import Difficulty from "./difficultyChosen/Difficulty";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { setCategory } from "../../store/app-data-slice";
 import { fetchDataAPI } from "../../store/async-thunks";
 import Modal from "../layout/modal/Modal";

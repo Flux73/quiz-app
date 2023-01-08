@@ -52,11 +52,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  height: 100vh;
   line-height: 1;
   font-weight: 400;
   color: var(--font-color__light);
   background-color: var(--background-color__light);
   transition: all var(--transition-delay);
+  position: relative;
 }
 
 body.dark {

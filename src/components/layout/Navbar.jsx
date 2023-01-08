@@ -41,8 +41,6 @@ const Navbar = () => {
               />
             )}
           </button>
-          {/* <IoSunny></IoSunny>
-    <HiComputerDesktop></HiComputerDesktop> */}
         </div>
       </div>
     </nav>

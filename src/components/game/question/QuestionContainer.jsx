@@ -4,6 +4,7 @@ import Choise from "./Choise";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addResultAnswer,
+  gameFinished,
   increaseIterationQuestion,
   setChosenAnswer,
 } from "../../../store/app-data-slice";
@@ -39,6 +40,8 @@ const QuestionContainer = () => {
         dispatch(setChosenAnswer({ answer: null }));
         setResultAnswer(null);
         dispatch(increaseIterationQuestion());
+      } else {
+        dispatch(gameFinished());
       }
     }, 2000);
   };

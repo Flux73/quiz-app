@@ -8,7 +8,6 @@ import styles from "./answers.module.css";
 
 const Answers = () => {
   const { answers } = useSelector((state) => state.appSlice);
-  console.log("ANSWER", answers);
   return (
     <div className={styles.answers__container}>
       {answers.map((el, i) => (

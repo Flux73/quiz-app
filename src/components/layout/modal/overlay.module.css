@@ -1,0 +1,10 @@
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.7);
+  z-index: 1;
+  backdrop-filter: blur(0.3rem);
+}

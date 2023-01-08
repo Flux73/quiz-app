@@ -1,0 +1,15 @@
+.backBtn:link,
+.backBtn:visited {
+  background-color: var(--primary-color);
+  color: var(--font-color__dark);
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  transition: all 0.4s;
+  box-shadow: 1rem 2rem 4.8rem rgb(0, 0, 0, 0.15);
+}
+
+.backBtn:active,
+.backBtn:hover {
+  opacity: 0.9;
+}

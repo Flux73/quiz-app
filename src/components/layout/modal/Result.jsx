@@ -20,20 +20,22 @@ const Result = () => {
       <p className={styles.desc}>
         You got a score of {score}/{limit}
       </p>
-      <button
-        onClick={() => {
-          dispatch(playAgain());
-          dispatch(fetchDataAPI());
-        }}
-        className={styles.btn}
-      >
-        Play Again
-      </button>
-      <ButtonLink
-        className={styles.secondaryBtn}
-        desc="Choose A Category"
-        to="/"
-      />
+      <div className={styles.btn__container}>
+        <button
+          onClick={() => {
+            dispatch(playAgain());
+            dispatch(fetchDataAPI());
+          }}
+          className={styles.btn}
+        >
+          Play Again
+        </button>
+        <ButtonLink
+          className={styles.secondaryBtn}
+          desc="Choose A Category"
+          to="/"
+        />
+      </div>
     </>
   );
 };

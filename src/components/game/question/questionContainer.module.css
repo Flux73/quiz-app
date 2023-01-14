@@ -4,6 +4,12 @@
   gap: 15rem;
 }
 
+.question__container-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .choises__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

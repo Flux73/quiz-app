@@ -23,6 +23,6 @@ body[class="dark"] .question {
 @media screen and (max-width: 25em) {
   .question {
     height: auto;
-    padding: 1rem 2rem;
+    padding: 5rem 2rem;
   }
 }

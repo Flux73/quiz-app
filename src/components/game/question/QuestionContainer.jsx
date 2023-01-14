@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Question from "./Question";
 import Choise from "./Choise";
+import ProgressBar from "../../layout/ProgressBar";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addResultAnswer,
@@ -43,19 +44,22 @@ const QuestionContainer = () => {
       } else {
         dispatch(gameFinished());
       }
-    }, 2000);
+    }, 2500);
   };
 
   return (
     <div className={styles.question__container}>
-      {data.length > 0 && (
-        <Question question={data[currentQuestionIteration].question} />
-      )}
-      {data.length === 0 && (
-        <Skeleton>
-          <Question />
-        </Skeleton>
-      )}
+      <div className={styles["question__container-progress"]}>
+        {data.length > 0 && (
+          <Question question={data[currentQuestionIteration].question} />
+        )}
+        {data.length === 0 && (
+          <Skeleton>
+            <Question />
+          </Skeleton>
+        )}
+        {chosenAnswer ? <ProgressBar /> : null}
+      </div>
       <div className={styles.choises__container}>
         {data.length > 0 &&
           data[currentQuestionIteration].answers.map((answer, i) => (

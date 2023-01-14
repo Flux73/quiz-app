@@ -1,0 +1,22 @@
+.progressBar {
+  height: 1.8rem;
+  width: 0%;
+  border-radius: 10rem;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    rgba(208, 124, 211)
+  );
+  animation: animatedProgressBar 2.5s;
+  backface-visibility: hidden;
+}
+
+@keyframes animatedProgressBar {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+} ;

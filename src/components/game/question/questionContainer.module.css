@@ -1,4 +1,10 @@
-.question__container {
+.question__wrapper {
+  display: flex !important;
+  flex-direction: column;
+  gap: 15rem;
+}
+
+.question__wrapperr {
   display: flex;
   flex-direction: column;
   gap: 15rem;
@@ -27,7 +33,7 @@
 }
 
 @media screen and (max-width: 37em) {
-  .question__container {
+  .question__wrapper {
     grid-row: 2/3;
     gap: 7.5rem;
   }

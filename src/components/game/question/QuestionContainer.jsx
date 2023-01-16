@@ -48,7 +48,7 @@ const QuestionContainer = () => {
   };
 
   return (
-    <div className={styles.question__container}>
+    <div className={`${styles.question__wrapper} ${styles.question__wrapperr}`}>
       <div className={styles["question__container-progress"]}>
         {data.length > 0 && (
           <Question question={data[currentQuestionIteration].question} />

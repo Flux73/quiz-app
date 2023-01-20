@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Question from "./Question";
 import Choise from "./Choise";
 import ProgressBar from "../../layout/ProgressBar";
@@ -13,12 +13,12 @@ import {
 import styles from "./questionContainer.module.css";
 import Skeleton from "../../layout/Skeleton";
 
+let timer;
 const QuestionContainer = () => {
   const dispatch = useDispatch();
-  const { chosenAnswer } = useSelector((state) => state.appSlice);
-  const { currentQuestionIteration } = useSelector((state) => state.appSlice);
-  const { data } = useSelector((state) => state.appSlice);
-  const { limit } = useSelector((state) => state.appSlice);
+  const { chosenAnswer, limit, currentQuestionIteration, data } = useSelector(
+    (state) => state.appSlice
+  );
   const [resultAnswer, setResultAnswer] = useState(null);
 
   const selectedAnswer = (e) => {
@@ -36,7 +36,7 @@ const QuestionContainer = () => {
       setResultAnswer(false);
     }
 
-    setTimeout(() => {
+    timer = setTimeout(() => {
       if (currentQuestionIteration < limit - 1) {
         dispatch(setChosenAnswer({ answer: null }));
         setResultAnswer(null);
@@ -46,6 +46,12 @@ const QuestionContainer = () => {
       }
     }, 2500);
   };
+
+  useEffect(() => {
+    return () => {
+      return clearInterval(timer);
+    };
+  }, [dispatch]);
 
   return (
     <div className={`${styles.question__wrapper} ${styles.question__wrapperr}`}>

@@ -1,5 +1,4 @@
 import React from "react";
-import { IoWarningOutline } from "react-icons/io5";
 import ButtonLink from "./ButtonLink";
 import errorImg from "../../../assets/error.png";
 import styles from "./error.module.css";

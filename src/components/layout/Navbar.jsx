@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../../store/theme-slice";
-// import useLocalStorage from "../../hooks/useLocalStorage";
 import logo from "../../assets/quiz-app-logo.svg";
 import { IoLogoGithub } from "react-icons/io5";
 import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
-import { HiComputerDesktop } from "react-icons/hi2";
 
 import styles from "./navbar.module.css";
 

@@ -2,6 +2,8 @@ import axios from "axios";
 import { storeQuestions } from "./app-data-slice";
 import { displayErrorMessage } from "./app-data-slice";
 
+// Async Redux thunk function to fetch data from the Trivia API!
+
 export const fetchDataAPI = () => {
   return async (dispatch, getState) => {
     const { appSlice } = getState();

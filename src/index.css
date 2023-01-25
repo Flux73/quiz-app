@@ -8,8 +8,6 @@
   --font-color__dark: #e0e7ff;
 
   --transition-delay: 1s;
-
-  --bp-large: 82em;
 }
 
 * {
@@ -19,6 +17,7 @@
 }
 
 html {
+  /* changed font-size to make it easy when using rem unit (now 1rem = 10px) */
   font-size: 62.5%;
 }
 
@@ -98,4 +97,4 @@ a {
   }
 }
 
-/* Breakpoint: 82 - 62 - 50 - 37 - 25 */
+/* Breakpoints: 82 - 62 - 50 - 37 - 25 */

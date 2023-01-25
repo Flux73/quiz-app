@@ -5,6 +5,8 @@ import Category from "./Category";
 import styles from "./categories.module.css";
 import Section from "../layout/Section";
 
+// Categories Component for The listed categories at the HOME PAGE!!!
+
 const Categories = () => {
   const { wantedCategories } = useSelector((state) => state.appSlice);
 

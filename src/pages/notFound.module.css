@@ -1,0 +1,35 @@
+.container__notfound {
+  padding: 10rem 0;
+  text-align: center;
+  max-width: 110rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.status__code {
+  color: var(--primary-color);
+  font-size: 10rem;
+}
+
+.back__btn:link,
+.back__btn:visited {
+  background-color: var(--primary-color);
+  color: var(--font-color__dark);
+  align-self: center;
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.back__btn:active,
+.back__btn:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 25em) {
+  .container__notfound h1 {
+    font-size: 3rem;
+  }
+}

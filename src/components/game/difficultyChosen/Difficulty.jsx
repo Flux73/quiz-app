@@ -8,14 +8,17 @@ import styles from "./difficulty.module.css";
 
 const Difficulty = () => {
   const [listHidden, setListHidden] = useState(true);
-  const { difficulty } = useSelector((state) => state.appSlice);
+  const { difficulty, timer } = useSelector((state) => state.appSlice);
   const dispatch = useDispatch();
 
   const showList = () => {
     setListHidden((prev) => !prev);
   };
 
-  const choseDifficulty = (e) => {
+  const chooseDifficulty = (e) => {
+    // To prevent the timer from firing!
+    timer && clearInterval(timer);
+
     const targetElement = e.target.closest("li");
     if (!targetElement) return;
 
@@ -32,7 +35,7 @@ const Difficulty = () => {
         <IoChevronDownOutline />
       </div>
       {!listHidden && (
-        <ul onClick={choseDifficulty} className={styles.difficulty__list}>
+        <ul onClick={chooseDifficulty} className={styles.difficulty__list}>
           <li data-difficulty="easy">
             <p>Easy</p>
           </li>

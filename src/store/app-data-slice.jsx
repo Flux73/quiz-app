@@ -1,19 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 import wantedCategories from "./wantedCategories.js";
 
-// https://the-trivia-api.com/api/questions?categories=science,food_and_drink&limit=7&difficulty=easy
-
+/*
+  Trivia API Link :  https://the-trivia-api.com
+*/
 const initialState = {
   wantedCategories,
   limit: 5,
   difficulty: "easy",
   category: null,
+  // data array structure => {id: ..., question: ..., correctAnswer: ...,  answers: [array of all the available answers for the question]}
   data: [],
   chosenAnswer: null,
   currentQuestionIteration: 0,
   answers: [],
   showError: false,
   isGameFinished: false,
+  timer: null,
 };
 
 const appSlice = createSlice({
@@ -34,7 +37,6 @@ const appSlice = createSlice({
 
     setDifficulty: (state, action) => {
       state.difficulty = action.payload.difficulty;
-      // Default
       state.chosenAnswer = null;
       state.data = [];
       state.currentQuestionIteration = 0;
@@ -74,6 +76,7 @@ const appSlice = createSlice({
       state.data = dummyArr;
     },
 
+    // Increasing the index to get the next question in the array data!
     increaseIterationQuestion: (state, action) => {
       state.currentQuestionIteration = state.currentQuestionIteration + 1;
     },
@@ -102,6 +105,10 @@ const appSlice = createSlice({
       state.currentQuestionIteration = 0;
       state.isGameFinished = false;
     },
+
+    setTimer: (state, action) => {
+      state.timer = action.payload.timer;
+    },
   },
 });
 
@@ -116,6 +123,7 @@ export const {
   displayErrorMessage,
   gameFinished,
   playAgain,
+  setTimer,
 } = appSlice.actions;
 
 export default appSlice.reducer;

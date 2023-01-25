@@ -1,3 +1,4 @@
+// Static Data that app use in the store!
 const wantedCategories = [
   {
     id: "food_and_drink,general_knowledge,film_and_tv,geography,science,sport_and_leisure",
@@ -12,7 +13,6 @@ const wantedCategories = [
   {
     id: "food_and_drink",
     category: "Food & Drink",
-
     style: "food",
   },
   {

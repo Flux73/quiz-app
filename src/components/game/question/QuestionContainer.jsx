@@ -8,6 +8,7 @@ import {
   gameFinished,
   increaseIterationQuestion,
   setChosenAnswer,
+  setTimer,
 } from "../../../store/app-data-slice";
 
 import styles from "./questionContainer.module.css";
@@ -22,8 +23,16 @@ const QuestionContainer = () => {
   const [resultAnswer, setResultAnswer] = useState(null);
 
   const selectedAnswer = (e) => {
+    /* 
+    if the user already chose an answer, and the timer didnt yet get fired,
+     this will prevent the user from chosing a diffrent answer untill the question is changed!
+    */
     if (chosenAnswer) return;
+
+    // Getting the div element that has been clicked and store it to the el variable!
     const el = e.target.closest("div");
+
+    // Getting and storing the chosen or clicked answer in the chosenAnswer variable in the store!
     dispatch(setChosenAnswer({ answer: el.dataset.answer }));
     if (
       el.dataset.answer ===
@@ -37,20 +46,25 @@ const QuestionContainer = () => {
     }
 
     timer = setTimeout(() => {
+      // the index didn't yet reach the final question or the final element in the data array!
       if (currentQuestionIteration < limit - 1) {
         dispatch(setChosenAnswer({ answer: null }));
         setResultAnswer(null);
         dispatch(increaseIterationQuestion());
+
+        // the index reached the final question, no more questions left!
       } else {
         dispatch(gameFinished());
       }
     }, 2500);
+
+    // Storing the timer to the store so it can be controlled, prevent it whenever it is needed!
+    dispatch(setTimer({ timer }));
   };
 
   useEffect(() => {
-    return () => {
-      return clearInterval(timer);
-    };
+    // Clearing the timer if the user changed the page (went to home page), so the timer won't fire after the InitialStateFn has been called!
+    return () => clearInterval(timer);
   }, [dispatch]);
 
   return (
